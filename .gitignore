@@ -1,0 +1,15 @@
+# IDE files
+.idea
+*.iml
+
+# OS files
+.DS_Store
+
+# Node modules
+/node_modules
+
+# Build files
+/dist
+
+# Runtime data
+/data
