@@ -25,14 +25,11 @@ export const ordersTable = pgTable('orders', {
     orderDate: timestamp('order_date').notNull().defaultNow(),
 })
 
-relations(ordersTable, ({ one }) => ({
+export const ordersTableRelations = relations(ordersTable, ({ one, many }) => ({
     customer: one(customersTable, {
         fields: [ordersTable.customerId],
         references: [customersTable.id],
     }),
-}))
-
-relations(ordersTable, ({ many }) => ({
     items: many(orderItemsTable),
 }))
 
@@ -47,7 +44,7 @@ export const orderItemsTable = pgTable('order_items', {
     quantity: integer('quantity').notNull(),
 })
 
-relations(orderItemsTable, ({ one }) => ({
+export const orderItemsRelations = relations(orderItemsTable, ({ one }) => ({
     order: one(ordersTable, {
         fields: [orderItemsTable.orderId],
         references: [ordersTable.id],

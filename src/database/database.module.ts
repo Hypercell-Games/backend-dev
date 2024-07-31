@@ -5,7 +5,6 @@ import * as pg from 'pg'
 import { DatabaseService } from './database.service'
 import { PostgresConfigService } from './postgres-config.service'
 import { CustomerRepositoryService } from './repositories/customer-repository.service'
-import { OrderItemRepositoryService } from './repositories/order-item-repository.service'
 import { OrderRepositoryService } from './repositories/order-repository.service'
 import { ProductRepositoryService } from './repositories/product-repository.service'
 
@@ -33,10 +32,9 @@ const PgClientFactory = {
         PgClientFactory,
         DatabaseService,
         CustomerRepositoryService,
-        OrderItemRepositoryService,
         OrderRepositoryService,
         ProductRepositoryService,
     ],
-    exports: [CustomerRepositoryService, OrderItemRepositoryService, OrderRepositoryService, ProductRepositoryService],
+    exports: [CustomerRepositoryService, OrderRepositoryService, ProductRepositoryService],
 })
 export class DatabaseModule {}

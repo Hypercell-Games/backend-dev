@@ -12,6 +12,10 @@ export class OrderRepositoryService {
     public async getOrdersByCustomerId(customerId: number): Promise<Order[]> {
         const db = await this.databaseService.getDatabase()
 
-        return await db.select().from(ordersTable).where(eq(ordersTable.customerId, customerId)).execute()
+        return await db.query.ordersTable
+            .findMany({
+                where: eq(ordersTable.customerId, customerId),
+            })
+            .execute()
     }
 }

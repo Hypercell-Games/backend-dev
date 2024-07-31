@@ -25,10 +25,10 @@ Additionally, it uses:
 To perform live coding session tasks it's expected to additionally have knowledge of:
 
 - Running docker containers with docker-compose
-- Using Drizzle ORM to structure and perform queries
+- Drizzle ORM queries using findMany() and findOne()
 
-If you're not familiar with any of these technologies, don't worry :)
-You still have time to get basic understanding of them before the session.
+If you're not familiar with any of these, don't worry :)
+You still have time to get basic understanding before the session.
 It's not that hard, we promise.
 
 ## Getting Started
